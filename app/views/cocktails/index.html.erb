@@ -1,2 +1,22 @@
 <h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="cocktail-wrapper">
+          <h1><%= cocktail.name %></h1>
+          <% cocktail.doses.each do |dose| %>
+            <%# [dose1, dose2, dose3].each do |dose| %>
+            <p><%= dose.ingredient.name %></p>
+            <p><%= dose.description %></p>
+          <% end %>
+          <!-- insert <div class="card"> -->
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+  <p>Find me in app/views/cocktails/index.html.erb</p>
+
