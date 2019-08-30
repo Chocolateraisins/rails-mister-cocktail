@@ -1,8 +1,15 @@
-<h1>Cocktails#index</h1>
+<div class="title-section text-center">
+<h1>
+  cocktails
+</h1>
+
+<%= link_to 'Add a new cocktail', new_cocktail_path, class: 'btn btn-primary ' %>
+</div>
 
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="cocktail-wrapper">
           <h1><%= cocktail.name %></h1>
@@ -14,6 +21,7 @@
           <!-- insert <div class="card"> -->
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>
